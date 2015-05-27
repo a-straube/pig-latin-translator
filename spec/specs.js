@@ -20,4 +20,8 @@ describe('inPigLatin', function() {
   it('moves the first letter of a word to the end of a word if it is a consonant and adds ay to the end', function() {
     expect(inPigLatin('tea')).to.equal('eatay');
   });
+
+  it('moves the first two letters of a word to the end of the word if they are both consonants, and adds ay to the end', function() {
+    expect(inPigLatin('the')).to.equal('ethay');
+  });
 });

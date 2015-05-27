@@ -12,6 +12,10 @@ var inPigLatin = function(text) {
     text += "ay";
     return text;
   } else {
-    return text.slice(1) + text[0] + "ay"
+    if (!isVowel(text[1])) {
+      return text.slice(2) + text.slice(0,2) + "ay";
+    } else {
+      return text.slice(1) + text[0] + "ay"
+    }
   }
 };
