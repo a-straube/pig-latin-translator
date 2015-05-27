@@ -28,4 +28,8 @@ describe('inPigLatin', function() {
   it('moves first three letters to end and adds "ay" if they are consonants', function() {
     expect(inPigLatin('three')).to.equal('eethray');
   });
+
+  it('moves "qu" together as consonants to the end and adds "ay"', function() {
+    expect(inPigLatin('squeel')).to.equal('eelsquay');
+  });
 });
