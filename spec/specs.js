@@ -24,4 +24,8 @@ describe('inPigLatin', function() {
   it('moves the first two letters of a word to the end of the word if they are both consonants, and adds ay to the end', function() {
     expect(inPigLatin('the')).to.equal('ethay');
   });
+
+  it('moves first three letters to end and adds "ay" if they are consonants', function() {
+    expect(inPigLatin('three')).to.equal('eethray');
+  });
 });
