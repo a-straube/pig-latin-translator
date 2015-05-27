@@ -32,4 +32,8 @@ describe('inPigLatin', function() {
   it('moves "qu" together as consonants to the end and adds "ay"', function() {
     expect(inPigLatin('squeel')).to.equal('eelsquay');
   });
+
+  it('works for words starting with 4 or more consonants', function() {
+    expect(inPigLatin('schmaltzy')).to.equal('altzyschmay');
+  })
 });
