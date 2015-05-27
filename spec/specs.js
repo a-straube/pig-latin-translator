@@ -36,10 +36,22 @@ describe('inPigLatin', function() {
   it('works for words starting with 4 or more consonants', function() {
     expect(inPigLatin('schmaltzy')).to.equal('altzyschmay');
   })
+
+  it('works for capitalized words starting with a consonant', function() {
+    expect(inPigLatin('Three')).to.equal('eeThray');
+  });
+
+  it('works for capitalized words starting with a vowel', function() {
+    expect(inPigLatin('Ate')).to.equal('Ateay');
+  });
 });
 
 describe('startIndex', function() {
   it('returns the index of the first vowel of a word', function() {
     expect(startIndex('three')).to.equal(3);
-  })
+  });
+
+  it('treats "u" as a consonant when preceded by a "q"', function() {
+    expect(startIndex('squrtquae')).to.equal(7);
+  });
 });

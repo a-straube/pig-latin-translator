@@ -1,6 +1,6 @@
 var isVowel = function(letter) {
   var vowels = ['a', 'e', 'o', 'u', 'i', 'y']
-  if (vowels.indexOf(letter) >= 0) {
+  if (vowels.indexOf(letter.toLowerCase()) >= 0) {
     return true;
   } else {
     return false;
