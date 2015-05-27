@@ -8,20 +8,26 @@ var isVowel = function(letter) {
 };
 
 
-var inPigLatin = function(text) {
-  if (isVowel(text[0]) && text[0] != "y") {
-    text += "ay";
-    return text;
+var wordInPigLatin = function(word) {
+  if (isVowel(word[0]) && word[0] != "y") {
+    word += "ay";
+    return word;
   } else {
-    var n = startIndex(text);
-    return text.slice(n) + text.slice(0,n) + "ay";
+    var n = startIndex(word);
+    return word.slice(n) + word.slice(0,n) + "ay";
   }
 };
 
-var startIndex = function(text) {
-  var n = 1
-  while (!isVowel(text[n]) || (text[n] === "u" && text[n-1] === "q")) {
+var startIndex = function(word) {
+  var n = 1;
+  while (!isVowel(word[n]) || (word[n] === "u" && word[n-1] === "q")) {
    n += 1;
   }
-  return n
-}
+  return n;
+};
+
+var sentenceInPigLatin = function(sentence) {
+  var toBeSplit = sentence.split(" ");
+  var returnSentence = toBeSplit.map (function(word) {return wordInPigLatin(word);}) ;
+  return returnSentence.join(" ");
+};

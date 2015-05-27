@@ -8,41 +8,41 @@ describe('isVowel', function() {
   });
 });
 
-describe('inPigLatin', function() {
+describe('wordInPigLatin', function() {
   it('puts "ay" at the end of a word starting with a vowel', function() {
-    expect(inPigLatin('eat')).to.equal('eatay');
+    expect(wordInPigLatin('eat')).to.equal('eatay');
   });
 
   it('treats "y" as a consonant', function() {
-    expect(inPigLatin('yes')).to.equal('esyay')
+    expect(wordInPigLatin('yes')).to.equal('esyay')
   });
 
   it('moves the first letter of a word to the end of a word if it is a consonant and adds ay to the end', function() {
-    expect(inPigLatin('tea')).to.equal('eatay');
+    expect(wordInPigLatin('tea')).to.equal('eatay');
   });
 
   it('moves the first two letters of a word to the end of the word if they are both consonants, and adds ay to the end', function() {
-    expect(inPigLatin('the')).to.equal('ethay');
+    expect(wordInPigLatin('the')).to.equal('ethay');
   });
 
   it('moves first three letters to end and adds "ay" if they are consonants', function() {
-    expect(inPigLatin('three')).to.equal('eethray');
+    expect(wordInPigLatin('three')).to.equal('eethray');
   });
 
   it('moves "qu" together as consonants to the end and adds "ay"', function() {
-    expect(inPigLatin('squeel')).to.equal('eelsquay');
+    expect(wordInPigLatin('squeel')).to.equal('eelsquay');
   });
 
   it('works for words starting with 4 or more consonants', function() {
-    expect(inPigLatin('schmaltzy')).to.equal('altzyschmay');
+    expect(wordInPigLatin('schmaltzy')).to.equal('altzyschmay');
   })
 
   it('works for capitalized words starting with a consonant', function() {
-    expect(inPigLatin('Three')).to.equal('eeThray');
+    expect(wordInPigLatin('Three')).to.equal('eeThray');
   });
 
   it('works for capitalized words starting with a vowel', function() {
-    expect(inPigLatin('Ate')).to.equal('Ateay');
+    expect(wordInPigLatin('Ate')).to.equal('Ateay');
   });
 });
 
@@ -53,5 +53,11 @@ describe('startIndex', function() {
 
   it('treats "u" as a consonant when preceded by a "q"', function() {
     expect(startIndex('squrtquae')).to.equal(7);
+  });
+});
+
+describe('sentenceInPigLatin', function() {
+  it('translates each word in a sentence to pig latin', function() {
+    expect(sentenceInPigLatin('Hello World')).to.equal('elloHay orldWay');
   });
 });
