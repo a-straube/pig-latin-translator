@@ -60,4 +60,8 @@ describe('sentenceInPigLatin', function() {
   it('translates each word in a sentence to pig latin', function() {
     expect(sentenceInPigLatin('Hello World')).to.equal('elloHay orldWay');
   });
+
+  it('works with punctuation', function() {
+    expect(sentenceInPigLatin('The world, is round?')).to.equal('eThay orldway, isay oundray?');
+  });
 });

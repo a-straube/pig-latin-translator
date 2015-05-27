@@ -27,7 +27,5 @@ var startIndex = function(word) {
 };
 
 var sentenceInPigLatin = function(sentence) {
-  var toBeSplit = sentence.split(" ");
-  var returnSentence = toBeSplit.map (function(word) {return wordInPigLatin(word);}) ;
-  return returnSentence.join(" ");
+  return sentence.replace(/[A-Za-z]+/g, function(strWord) { return wordInPigLatin(strWord); });
 };
