@@ -37,3 +37,9 @@ describe('inPigLatin', function() {
     expect(inPigLatin('schmaltzy')).to.equal('altzyschmay');
   })
 });
+
+describe('startIndex', function() {
+  it('returns the index of the first vowel of a word', function() {
+    expect(startIndex('three')).to.equal(3);
+  })
+});
