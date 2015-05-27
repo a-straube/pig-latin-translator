@@ -6,3 +6,12 @@ var isVowel = function(letter) {
     return false;
   }
 };
+
+var inPigLatin = function(text) {
+  if (isVowel(text[0]) && text[0] != "y") {
+    text += "ay";
+    return text;
+  } else {
+    return text.slice(1) + text[0] + "ay"
+  }
+};
